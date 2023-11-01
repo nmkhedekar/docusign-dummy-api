@@ -41,7 +41,7 @@ const getUploadedDocument = async (req, res) => {
 const modifyDocument = async (req, res) => {
     let user = null;
     // debugger
-    await User.findOne({ _id: req.user.userId }).then( async resp => {
+    await User.findOne({ _id: req.user.userId }).then(async resp => {
         user = resp;
         console.log("user", resp);
         await Document.findOne({
@@ -73,45 +73,48 @@ const modifyDocument = async (req, res) => {
                         const { width, height } = page.getSize()
 
                         // Draw a string of text diagonally across the page
-                        page.drawText("DEMONSTRATON DOCUMENT ONLY", {
+                        page.drawText(`Envelope ID: ${req.user.userId} - ${resp?._id}`, {
                             x: 5,
-                            y: height / 2 + 300,
-                            size: 50,
+                            y: height / 2 + 390,
+                            size: 8,
+                            font: helveticaFont,
+                            color: rgb(0, 0, 0),
+                        });
+                        page.drawText("DEMONSTRATON DOCUMENT ONLY", {
+                            x: 350,
+                            y: height / 2 + 390,
+                            size: 8,
                             font: helveticaFont,
                             color: rgb(0.95, 0.1, 0.1),
-                            rotate: degrees(-45),
                         });
                         page.drawText("PROVIDED BY DOCUSIGN DUMMY ONLINE SERVICE", {
-                            x: 5,
-                            y: height / 2 + 300,
-                            size: 50,
+                            x: 350,
+                            y: height / 2 + 380,
+                            size: 8,
                             font: helveticaFont,
                             color: rgb(0.95, 0.1, 0.1),
-                            rotate: degrees(-45),
                         });
                         page.drawText(req.user.name, {
-                            x: 5,
-                            y: height / 2 + 300,
-                            size: 50,
+                            x: 350,
+                            y: height / 2 + 370,
+                            size: 8,
                             font: helveticaFont,
                             color: rgb(0.95, 0.1, 0.1),
-                            rotate: degrees(-45),
                         });
                         page.drawText(`Contact No: ${user.phone}`, {
-                            x: 5,
-                            y: height / 2 + 300,
-                            size: 50,
+                            x: 350,
+                            y: height / 2 + 360,
+                            size: 8,
                             font: helveticaFont,
                             color: rgb(0.95, 0.1, 0.1),
-                            rotate: degrees(-45),
                         });
                         page.drawText(`Email: ${user.email}`, {
-                            x: 5,
-                            y: height / 2 + 300,
-                            size: 50,
+                            x: 350,
+                            y: height / 2 + 350,
+                            size: 8,
                             font: helveticaFont,
                             color: rgb(0.95, 0.1, 0.1),
-                            rotate: degrees(-45),
+                            // rotate: degrees(-45),
                         });
                     }
 
