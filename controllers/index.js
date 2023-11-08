@@ -17,6 +17,7 @@ const {
 
 const {
     uploadDocument,
+    getUploadedDocumentList,
     getUploadedDocument,
     modifyDocument,
     modifyDocumentWithImageSign,
@@ -36,6 +37,7 @@ module.exports = {
     showCurrentUser,
 
     uploadDocument,
+    getUploadedDocumentList,
     getUploadedDocument,
     modifyDocument,
     modifyDocumentWithImageSign,

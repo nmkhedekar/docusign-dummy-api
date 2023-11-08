@@ -9,6 +9,10 @@ const Document = new mongoose.Schema({
         type: String,
         default: ""
     },
+    email: {
+        type: String,
+        default: ""
+    },
     ducumentDate: {
         type: Date,
     },
@@ -20,6 +24,10 @@ const Document = new mongoose.Schema({
         type: String,
         default: ""
     },
+    status: {
+        type: String,
+        default: "Incomplete"
+    }
 }, { timestamps: true });
 
 module.exports = mongoose.model("document", Document);

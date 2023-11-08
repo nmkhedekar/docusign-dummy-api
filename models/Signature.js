@@ -20,6 +20,9 @@ const Signature = new mongoose.Schema({
         type: String,
         default: ""
     },
+    documentId: {
+        type: mongoose.Types.ObjectId,        
+    }
 }, { timestamps: true });
 
 module.exports = mongoose.model("signature", Signature);

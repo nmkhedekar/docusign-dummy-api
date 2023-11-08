@@ -1,5 +1,5 @@
 const express = require('express');
-const { uploadDocument, getUploadedDocument, modifyDocument, modifyDocumentWithImageSign, uploadSignature } = require('../controllers');
+const { uploadDocument, getUploadedDocumentList, getUploadedDocument, modifyDocument, modifyDocumentWithImageSign, uploadSignature } = require('../controllers');
 const { uploadMulti, uploadMultiImage } = require("../utils/uploadMulti");
 const {
     authenticateUser,
@@ -9,6 +9,7 @@ const {
 const router = express.Router()
 
 router.route("/upload-document").post([authenticateUser, uploadMulti.array('multiFile', 10)], uploadDocument);
+router.route("/get-document-list").get(authenticateUser, getUploadedDocumentList);
 router.route("/get-document").post(authenticateUser, getUploadedDocument);
 router.route("/modify-document").patch(authenticateUser, modifyDocument);
 router.route("/modify-document-with-img-sign").patch(authenticateUser, modifyDocumentWithImageSign);
