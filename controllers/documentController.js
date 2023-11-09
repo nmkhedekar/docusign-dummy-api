@@ -336,8 +336,9 @@ const uploadSignature = async (req, res) => {
                             })
                         }
                     })
-                })
-
+                }).catch(err => {
+                    console.log("signatureError", err);
+                });
             }).catch(err => {
                 console.log("modifyDocumentError", err);
             });
