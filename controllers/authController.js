@@ -30,7 +30,7 @@ const register = async (req, res) => {
         role,
         verificationToken,
     });
-    const origin = "http://localhost:3000"//'http://localhost:8080';
+    const origin = "http://54.159.43.24"//'http://localhost:8080';
 
     // const newOrigin = 'https://react-node-user-workflow-front-end.netlify.app';
 

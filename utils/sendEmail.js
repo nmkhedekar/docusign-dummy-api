@@ -6,17 +6,17 @@ const sendEmail = async ({ to, subject, html }) => {
 
   //https://ethereal.email/
   const transporter = await nodemailer.createTransport({
-    host: 'smtp.ethereal.email',
-    port: 587,
-    auth: {
-      user: "lesley.ruecker28@ethereal.email",//testAccount.user,
-      pass: "P6cnr8Xx5SgC1QXb6G",//testAccount.pass,
-    },
-    // service: "gmail",
+    // host: 'smtp.ethereal.email',
+    // port: 587,
     // auth: {
-    //   user: "",//testAccount.user,
-    //   pass: "",//testAccount.pass,
+    //   user: "lesley.ruecker28@ethereal.email",//testAccount.user,
+    //   pass: "P6cnr8Xx5SgC1QXb6G",//testAccount.pass,
     // },
+    service: "gmail",
+    auth: {
+      user: "nikhilkhedekar2012@gmail.com",//testAccount.user,
+      pass: "dfwumyqyilkogjak",//testAccount.pass,
+    },
   });
 
   return transporter.sendMail({
